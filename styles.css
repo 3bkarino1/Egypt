@@ -1,0 +1,1113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --primary-color: #0066cc;
+    --primary-dark: #004aad;
+    --secondary-color: #f5f7fa;
+    --text-color: #333;
+    --light-gray: #d3d3d3;
+    --dark-gray: #666;
+    --white: #fff;
+    --transition: all 0.3s ease;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.fa-heartbeat {
+    font-size: 40px;
+    color: var(--primary-color);
+    margin-right: 15px;
+    transition: var(--transition);
+}
+
+.logo-container:hover .fa-heartbeat {
+    color: var(--primary-dark);
+    transform: scale(1.2);
+}
+
+h1 {
+    color: var(--text-color);
+    font-size: 24px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding: 5px 0;
+    position: relative;
+    transition: var(--transition);
+}
+
+.nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-dark);
+    transition: var(--transition);
+}
+
+.nav-link:hover:after, .nav-link.active:after {
+    width: 100%;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.mobile-menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 3px 0;
+    transition: var(--transition);
+    display: block;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 992px) {
+    .card {
+        width: calc(50% - 15px);
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-image {
+        height: 300px;
+        width: 100%;
+    }
+    
+    .about-text {
+        width: 100%;
+        padding: 30px;
+    }
+    
+    .footer-section {
+        width: 45%;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Header responsive improvements */
+    .mobile-menu-toggle {
+        display: flex;
+        z-index: 101;
+    }
+    
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--white);
+        padding: 80px 0 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 99;
+    }
+    
+    nav.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    
+    nav ul li {
+        margin: 15px 0;
+    }
+    
+    .nav-link {
+        font-size: 20px;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    /* Card improvements */
+    .card {
+        width: 100%;
+        padding: 25px;
+    }
+    
+    /* Search improvements */
+    .search-input {
+        width: 70%;
+    }
+    
+    /* Footer improvements */
+    .footer-section {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    /* Hero section adjustments */
+    .hero {
+        margin: 25px 3% 2rem;
+    }
+    
+    /* Disease list adjustments */
+    .disease-list {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    /* Header adjustments */
+    header {
+        padding: 15px 4%;
+    }
+    
+    .logo-container h1 {
+        font-size: 20px;
+    }
+    
+    .fa-heartbeat {
+        font-size: 32px;
+        margin-right: 10px;
+    }
+    
+    /* Hero section adjustments */
+    .hero {
+        height: 400px;
+        margin: 20px 2% 1.5rem;
+        border-radius: 10px;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-text p {
+        font-size: 1rem;
+    }
+    
+    .hero .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Section titles */
+    .section-title {
+        font-size: 24px;
+        margin: 40px 0 25px;
+    }
+    
+    .section-title:after {
+        width: 60px;
+        height: 2px;
+    }
+    
+    /* Search container */
+    .search-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .search-input {
+        width: 100%;
+        border-radius: 30px;
+        margin-bottom: 10px;
+    }
+    
+    .search-button {
+        width: 100%;
+        border-radius: 30px;
+    }
+    
+    /* Card adjustments */
+    .card {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    /* About section */
+    .about-image {
+        height: 250px;
+    }
+    
+    .about-text {
+        padding: 25px;
+    }
+    
+    .contact-button {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+    
+    /* Footer adjustments */
+    footer {
+        padding: 40px 4% 15px;
+    }
+    
+    .social-icon {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    /* Extra small device adjustments */
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-text p {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .disease-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .card h3, .disease-item h3 {
+        font-size: 18px;
+    }
+    
+    .card p, .disease-item p {
+        font-size: 14px;
+    }
+}
+
+/* Fix for menu toggle on mobile */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    color: var(--white);
+    text-align: center;
+    margin: 30px 5% 3rem; /* Added top margin of 30px */
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    height: 550px;
+}
+
+.hero-content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.hero-content img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    transform: scale(1);
+    transition: transform 8s ease;
+}
+
+.hero:hover .hero-content img {
+    transform: scale(1.1);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 102, 204, 0.7), rgba(0, 0, 0, 0.8));
+    z-index: 1;
+}
+
+.hero-text {
+    padding: 2rem;
+    max-width: 800px;
+    text-align: center;
+    z-index: 3;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero-text p {
+    font-size: 1.4rem;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease-out 0.3s;
+    animation-fill-mode: both;
+}
+
+.hero .cta-button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-out 0.6s;
+    animation-fill-mode: both;
+}
+
+.hero .cta-button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments for hero section */
+@media (max-width: 768px) {
+    .hero {
+        height: 450px;
+        margin: 25px 3% 2rem; /* Added top margin for tablets */
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-text p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 400px;
+        margin: 20px 2% 1.5rem; /* Added top margin for mobile */
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-text p {
+        font-size: 1rem;
+    }
+    
+    .hero .cta-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
+
+/* Diseases Section Styling */
+.diseases-section {
+    padding: 4rem 2rem;
+    background-color: var(--light-bg, #f8f9fa);
+    text-align: center;
+}
+
+.diseases-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2.5rem;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.diseases-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--primary-color, #3498db);
+}
+
+.disease-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--primary-color, #3498db);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.card i {
+    font-size: 3rem;
+    color: var(--primary-color, #3498db);
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.card:hover i {
+    transform: scale(1.2);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    color: #333;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.learn-more {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    background: var(--primary-color, #3498db);
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: auto;
+}
+
+.learn-more:hover {
+    background: var(--secondary-color, #2c3e50);
+    transform: translateX(5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .diseases-section {
+        padding: 3rem 1rem;
+    }
+    
+    .diseases-section h2 {
+        font-size: 2rem;
+    }
+    
+    .disease-cards {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .diseases-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .card i {
+        font-size: 2.5rem;
+    }
+    
+    .card h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Animation for cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+.card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.card:nth-child(4) {
+    animation-delay: 0.7s;
+}
+
+/* Diseases Section */
+.diseases-section {
+    padding: 0 5%;
+    margin-bottom: 50px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.search-input {
+    width: 60%;
+    padding: 12px 20px;
+    border: 1px solid var(--light-gray);
+    border-radius: 30px 0 0 30px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.search-button:hover {
+    background-color: var(--primary-dark);
+}
+
+.disease-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.disease-item {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.disease-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.disease-item h3 {
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+}
+
+.disease-item p {
+    color: var(--dark-gray);
+    margin-bottom: 20px;
+}
+
+/* About Section */
+.about-section {
+    padding: 0 5%;
+    margin-bottom: 50px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-image {
+    flex: 1;
+    height: 400px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-text {
+    flex: 1;
+    padding: 40px;
+}
+
+.about-text h3 {
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    margin-bottom: 25px;
+    color: var(--dark-gray);
+}
+
+.contact-button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.contact-button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: var(--white);
+    padding: 50px 5% 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.footer-section {
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.footer-section h3:after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background-color: var(--primary-color);
+    bottom: -10px;
+    left: 0;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-section ul li a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
+
+.social-icons {
+    display: flex;
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #444;
+    color: var(--white);
+    border-radius: 50%;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 992px) {
+    .card {
+        width: calc(50% - 15px);
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-image {
+        height: 300px;
+        width: 100%;
+    }
+    
+    .about-text {
+        width: 100%;
+        padding: 30px;
+    }
+    
+    .footer-section {
+        width: 45%;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Header responsive improvements */
+    .mobile-menu-toggle {
+        display: flex;
+        z-index: 101;
+    }
+    
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--white);
+        padding: 80px 0 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 99;
+    }
+    
+    nav.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    
+    nav ul li {
+        margin: 15px 0;
+    }
+    
+    .nav-link {
+        font-size: 20px;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    /* Card improvements */
+    .card {
+        width: 100%;
+        padding: 25px;
+    }
+    
+    /* Search improvements */
+    .search-input {
+        width: 70%;
+    }
+    
+    /* Footer improvements */
+    .footer-section {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    /* Hero section adjustments */
+    .hero {
+        margin: 25px 3% 2rem;
+    }
+    
+    /* Disease list adjustments */
+    .disease-list {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    /* Header adjustments */
+    header {
+        padding: 15px 4%;
+    }
+    
+    .logo-container h1 {
+        font-size: 20px;
+    }
+    
+    .fa-heartbeat {
+        font-size: 32px;
+        margin-right: 10px;
+    }
+    
+    /* Hero section adjustments */
+    .hero {
+        height: 400px;
+        margin: 20px 2% 1.5rem;
+        border-radius: 10px;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-text p {
+        font-size: 1rem;
+    }
+    
+    .hero .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Section titles */
+    .section-title {
+        font-size: 24px;
+        margin: 40px 0 25px;
+    }
+    
+    .section-title:after {
+        width: 60px;
+        height: 2px;
+    }
+    
+    /* Search container */
+    .search-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .search-input {
+        width: 100%;
+        border-radius: 30px;
+        margin-bottom: 10px;
+    }
+    
+    .search-button {
+        width: 100%;
+        border-radius: 30px;
+    }
+    
+    /* Card adjustments */
+    .card {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    /* About section */
+    .about-image {
+        height: 250px;
+    }
+    
+    .about-text {
+        padding: 25px;
+    }
+    
+    .contact-button {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+    
+    /* Footer adjustments */
+    footer {
+        padding: 40px 4% 15px;
+    }
+    
+    .social-icon {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    /* Extra small device adjustments */
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-text p {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .disease-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .card h3, .disease-item h3 {
+        font-size: 18px;
+    }
+    
+    .card p, .disease-item p {
+        font-size: 14px;
+    }
+}
+
+/* Fix for menu toggle on mobile */
+body.menu-open {
+    overflow: hidden;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <i class="fas fa-heartbeat"></i>
+            <h1>Health Guide</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link active">HOME</a></li>
+                <li><a href="diseases.html" class="nav-link">ALL DISEASES</a></li>
+                <li><a href="about.html" class="nav-link about-us">ABOUT US</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="صحة القلب والأوعية الدموية">
+                <div class="hero-text">
+                    <h1>فهم الصحة في مصر</h1>
+                    <p>معلومات شاملة عن الأمراض الشائعة وعلاجاتها</p>
+                    <button class="cta-button">تعرف على المزيد</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="diseases" class="diseases-section">
+            <h2>الأمراض الشائعة في مصر</h2>
+            <div class="disease-cards">
+                <!-- In the disease-cards section, update the links to point to the new page -->
+                <div class="card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>أمراض القلب والأوعية الدموية</h3>
+                    <p>أمراض القلب والسكتة الدماغية من الأسباب الرئيسية للوفاة في مصر.</p>
+                    <a href="" class="learn-more">معرفة المزيد</a>
+                </div>
+                <div class="card">
+                    <i class="fas fa-lungs"></i>
+                    <h3>أمراض الجهاز التنفسي</h3>
+                    <p>بما في ذلك الربو، ومرض الانسداد الرئوي المزمن، والالتهابات التنفسية.</p>
+                    <a href="" class="learn-more">معرفة المزيد</a>
+                </div>
+                <div class="card">
+                    <i class="fas fa-virus"></i>
+                    <h3>الأمراض المعدية</h3>
+                    <p>التهاب الكبد الوبائي C، والسل، وغيرها من الأمراض المعدية.</p>
+                    <a href="" class="learn-more">معرفة المزيد</a>
+                </div>
+                <div class="card">
+                    <i class="fas fa-virus"></i>
+                    <h3>مرض السكري</h3>
+                    <p>انتشار مرتفع لمرض السكري من النوع 2 في السكان المصريين.</p>
+                    <a href="" class="learn-more">معرفة المزيد</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Medical Team">
+                </div>
+                <div class="about-text">
+                    <h3>Our Mission</h3>
+                    <p>Health Guide is dedicated to providing accurate and accessible health information to help people make informed decisions about their health and wellbeing.</p>
+                    <h3>Our Team</h3>
+                    <p>Our team consists of medical professionals, health educators, and content specialists who work together to deliver reliable health information.</p>
+                    <button class="contact-button">Contact Us</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
